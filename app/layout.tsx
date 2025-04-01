@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={geistSans.variable}>
-      <body className="bg-neutral-50 text-black selection:bg-pink-200 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+      <body className="bg-neutral-50 text-black selection:bg-sky-200 dark:bg-neutral-900 dark:text-white dark:selection:bg-indigo-800 dark:selection:text-white">
        <main>
         <ThemeProvider attribute="class" defaultTheme="system">{children}</ThemeProvider>
         </main>

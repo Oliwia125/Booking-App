@@ -6,6 +6,7 @@ import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
 import { DatePicker} from './calendarInput'
+import { Search } from 'lucide-react'
 
 
 const Navbar = () => {
@@ -35,6 +36,7 @@ const Navbar = () => {
           <li className="grid w-full max-w-sm items-center gap-1.5">
           <Label htmlFor="text">Who</Label>
           <Input type="number" id="residents" name='residents' min='1' max='10'/></li>
+          <li className='grid max-w-sm items-center gap-1.5 relative -bottom-2'><Button className=''><Search /></Button></li>
           
         </ul>
        </div>
