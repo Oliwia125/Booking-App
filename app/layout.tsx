@@ -5,7 +5,7 @@ import {ThemeProvider} from "next-themes";
 
 
 export const metadata: Metadata = {
-  title: "Booking App",
+  title: "Book me",
   description: "Find your perfect stay easily and fast",
 };
 const geistSans = Geist({

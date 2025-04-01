@@ -1,16 +1,12 @@
 import Navbar from "@/components/navbar/nav";
 import Image from "next/image";
 import Grid from "@/components/grid/grid";
-import Footer from "@/components/footer/footer";
-import Header from "@/components/header";
 
 export default function Home() {
   return (
    <main>
     <Navbar />
-    <Header />
     <Grid />
-    <Footer />
    </main>
   );
 }
