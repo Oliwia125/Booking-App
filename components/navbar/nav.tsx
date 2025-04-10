@@ -1,15 +1,22 @@
 'use client'
-
-import React from 'react'
-import Link from 'next/link'
-import { Button } from '../ui/button'
-import { Input } from '../ui/input'
-import { Label } from '../ui/label'
-import { DatePicker} from './calendarInput'
-import { Search } from 'lucide-react'
+// add zustand string state 
+import React from 'react';
+import Link from 'next/link';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
+import { Search } from 'lucide-react';
+import { DatePicker } from './calendarInput';
+import { useStore } from '@/store/useStore';
 
 
 const Navbar = () => {
+  const setLocation = useStore((state)=> state.setLocation);
+  
+  const handleLocationChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setLocation(event.target.value);
+  };
+
   return (
     <div className={
     'conatiner mx-auto flex items-center border-b-2 px-6 py-2 h-24'
@@ -22,7 +29,7 @@ const Navbar = () => {
         <ul className='flex gap-6'>
           <li className="grid w-full max-w-sm items-center gap-1.5">
           <Label htmlFor="text">Where</Label>
-          <Input type="text" id="text" placeholder="Type your destination" /></li>
+          <Input type="text" id="location" placeholder="Type your destination" onChange={handleLocationChange}/></li>
 
           <li className="grid w-full max-w-sm items-center gap-1.5">
           <Label htmlFor="text">Check in</Label>

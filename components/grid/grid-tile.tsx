@@ -13,21 +13,26 @@ import {
     CarouselItem,
     CarouselNext,
     CarouselPrevious, } from '../ui/carousel'
+interface Props {
+    title: string,
+    location: string,
+    url: string
+}
 
-const GridTile = () => {
+const GridTile = ({title, location, url} : Props ) => { 
     return (
         <div>
             
             <Card className="w-full max-w-xs transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                 <CardHeader>
                     <CardTitle className="inline-flex justify-between">
-                        Hotel XYZ <Button className="relative -top-2.5 "><Heart /></Button>
+                        {title} <Button className="relative -top-2.5 "><Heart /></Button>
                     </CardTitle>
-                    <CardDescription className="p-2">Germany, Frankfurt</CardDescription>
+                    <CardDescription className="p-2">{location}</CardDescription>
                     <CardContent>
                         <div>
                             <Image className="rounded-sm drop-shadow-sm" 
-                            src='/hotelroom1.png'
+                            src={url}
                             width={400}
                             height={380}
                             alt="Hotel room"
