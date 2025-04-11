@@ -6,7 +6,10 @@ export const bookingTable = pgTable('bookings_table', {
   id: serial('id').primaryKey(),
   title: text('title').notNull(),
   userId: text('user_id').unique().notNull(),
-  
+  location: text('location').notNull(),
+  checkIn: timestamp('check_in').notNull(),
+  checkOut: timestamp('check_out').notNull(),
+  numberGuests: integer('number_guests').notNull(),
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at')
     .notNull()

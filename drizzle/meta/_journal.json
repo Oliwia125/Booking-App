@@ -43,6 +43,13 @@
       "when": 1743850479643,
       "tag": "0005_ambiguous_violations",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1744368516335,
+      "tag": "0006_mighty_the_hood",
+      "breakpoints": true
     }
   ]
 }
