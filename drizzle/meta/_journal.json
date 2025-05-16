@@ -50,6 +50,13 @@
       "when": 1744368516335,
       "tag": "0006_mighty_the_hood",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1747322107951,
+      "tag": "0007_worried_meteorite",
+      "breakpoints": true
     }
   ]
 }

@@ -1,5 +1,5 @@
 'use client'
-//add zustand
+
 import React from "react";
 import GridTile from "./grid-tile";
 import { useStore } from "@/store/useStore";

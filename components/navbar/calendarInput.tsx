@@ -12,6 +12,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { DateRange } from "react-day-picker"
 
 export function DatePicker() {
   const [date, setDate] = React.useState<Date>()

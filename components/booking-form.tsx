@@ -65,12 +65,12 @@ export function BookingForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="conatiner mx-auto flex items-center border-b-2 px-6 py-2 h-24">
 
 
       <div className='grow'>
        <div className='hidden sm:flex items-center justify-center gap-2 md:gap-8'>
-        <ul className='flex gap-6'>
+        <ul className='flex gap-6 items-center'>
           <li className="grid w-full max-w-sm items-center gap-1.5">
 
           <FormField

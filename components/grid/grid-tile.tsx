@@ -30,14 +30,14 @@ const GridTile = ({title, location, url} : Props ) => {
                     </CardTitle>
                     <CardDescription className="p-2">{location}</CardDescription>
                     <CardContent>
-                        <div>
-                            <Image className="rounded-sm drop-shadow-sm" 
+                        <div className="relative w-full h-30">
+                            <Image className="rounded-sm drop-shadow-sm object-cover" 
                             src={url}
-                            width={400}
-                            height={380}
+                            layout="fill"
                             alt="Hotel room"
                             />
                         </div>
+                        
                         </CardContent>
                     <CardDescription className="p-1.5">400 EUR</CardDescription>
                 </CardHeader>

@@ -16,19 +16,6 @@ export const bookingTable = pgTable('bookings_table', {
     .$onUpdate(() => new Date()),
 });
 
-export const accommodationTable = pgTable('accommodation_table', {
-  id: serial('id').primaryKey(),
-  title: text('title').notNull(),
-  handle: text('handle'),
-  description: text('description').notNull(),
-  image: text('image').notNull(),
-  price: numeric('price', { precision: 15, scale: 6, }).notNull(),
-  createdAt: timestamp('created_at').notNull().defaultNow(),
-  updatedAt: timestamp('updated_at')
-    .notNull()
-    .$onUpdate(() => new Date()),
-});
-
 export const hotelsTable = pgTable('hotels_table', {
   id: serial('id').primaryKey(),
   userId: text('user_id').unique().notNull(),

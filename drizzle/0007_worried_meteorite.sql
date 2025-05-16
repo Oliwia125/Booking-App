@@ -1,0 +1,1 @@
+DROP TABLE "accommodation_table" CASCADE;
