@@ -15,32 +15,38 @@ import {
 import { db } from "@/db";
 import { hotelRoomTable, hotelRoomPictureTable } from "@/db/schema";
 
-    interface Props {
-        title: string,
-        location: string,
-        url: string
-    }
+interface Room {
+  title: string;
+  location: string;
+  description: string;
+  url: string;
+}
 
-    const GridPhotosTile = ({title, location, url} : Props ) => {
-        return (
-            <div>
-                <Carousel className="w-full max-w-xs">
-                <CarouselContent>
-                    
-                    <CarouselItem>
-                     <div className="p-1">
-                        <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                  
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        <CarouselPrevious />
-        <CarouselNext />
+interface GridPhotosTileProps {
+  rooms: Room[];
+}
+
+const GridPhotosTile: React.FC<GridPhotosTileProps> = ({ rooms }) => {
+  return (
+    <Carousel className="w-full max-w-xs">
+      <CarouselContent>
+      {rooms.map((room, index) => (
+        <CarouselItem key={index}>
+          <div className="p-1">
+            <Card>
+              <CardContent>
+                <span>
+              <Image src={room.url} alt={room.title} />
+              </span>
+              </CardContent>
+            </Card>
+          </div>
+          
+        </CarouselItem>
+      ))}
       </CarouselContent>
     </Carousel>
+  );
+};
 
-            </div>
-        )
-    }
+export default GridPhotosTile;
