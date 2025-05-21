@@ -14,7 +14,7 @@ export default async function Home() {
   result.map(hotel => allHotels.push({
     title: hotel.hotels_table.title,
     location: hotel.hotels_table.location,
-    url: hotel.hotels_picture_table.url || '',
+    url: hotel.hotels_picture_table?.url || '',
     }))
   return (
    <main>

@@ -1,11 +1,5 @@
-'use client'
-
-import clsx from "clsx";
-import Link from "next/link";
 import Image from "next/image";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle} from "../ui/card";
 import React from "react";
-import { Button } from "../ui/button";
 import { 
     Carousel, 
     CarouselContent,
@@ -14,39 +8,34 @@ import {
     CarouselPrevious, } from '../ui/carousel'
 import { db } from "@/db";
 import { hotelRoomTable, hotelRoomPictureTable } from "@/db/schema";
-
-interface Room {
-  title: string;
-  location: string;
-  description: string;
-  url: string;
+import { cn } from "@/lib/utils";
+import { eq } from "drizzle-orm";
+async function getHotelRoomPictures(id: number): Promise<any[]> {
+  return db.select().from(hotelRoomTable).where(eq(hotelRoomPictureTable.hotelRoomId, id));
 }
 
-interface GridPhotosTileProps {
-  rooms: Room[];
-}
 
-const GridPhotosTile: React.FC<GridPhotosTileProps> = ({ rooms }) => {
-  return (
-    <Carousel className="w-full max-w-xs">
-      <CarouselContent>
-      {rooms.map((room, index) => (
-        <CarouselItem key={index}>
-          <div className="p-1">
-            <Card>
-              <CardContent>
-                <span>
-              <Image src={room.url} alt={room.title} />
-              </span>
-              </CardContent>
-            </Card>
-          </div>
-          
-        </CarouselItem>
-      ))}
-      </CarouselContent>
-    </Carousel>
-  );
-};
+
+const GridPhotosTile = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { hotelRoomId: number; imageWidth?: number; imageHeight?: number; }>(
+  async ({ hotelRoomId, imageWidth = 100, imageHeight = 100, className, ...props }, ref) => {
+    const images = await getHotelRoomPictures(hotelRoomId);
+    return (
+      <Carousel className={cn("w-full max-w-xs", className)} {...props} ref={ref}>
+        <CarouselContent>
+        {images.map((_, i) => 
+          <CarouselItem  key={i}>
+            <div className="p-1">
+              <Image src={_.url} width={imageWidth} height={imageHeight} alt="Room picture" />
+            </div>
+          </CarouselItem>
+        )}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    )
+  }
+)
+GridPhotosTile.displayName = "GridPhotosTile"
 
 export default GridPhotosTile;
