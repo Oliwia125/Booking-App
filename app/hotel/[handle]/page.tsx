@@ -7,42 +7,39 @@ import Footer from "@/components/footer/footer";
 import { Button } from "@/components/ui/button";
 
 
-interface Room {
-  id: number;
-  title: string;
-  location: string;
-  description: string;
-  url: string;
-}
+
 
 interface Props {
     params: {
       handle: string }
 }
 
-async function getHotelRoomByHandle(handle: string): Promise<Room[]> {
-    return db
+async function getHotelRoomByHandle(handle: string) {
+  const hotel = await db.select().from(hotelsTable).where(eq(hotelsTable.handle, handle));
+  return await db
       .select()
       .from(hotelRoomTable)
       .leftJoin(hotelRoomPictureTable, eq(hotelRoomTable.id, hotelRoomPictureTable.hotelId))
-      .leftJoin(hotelsTable, eq(hotelRoomTable.handle, handle));
+      .where(eq(hotelRoomTable.hotelId, hotel[0].id));
 }
 
 
 
 const RoomPage = async function RoomPage({ params }: Props) {
     const _room = await getHotelRoomByHandle(params.handle); 
-    const room = _room[0];
+    const room = _room[0].hotels_room_table;
+    console.log(_room)
+    
 
 
   return (
     <>
     <Navbar />
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="flex items-start gap-20">
+      <div className="flex flex-row p-3">
     <GridPhotosTile hotelRoomId={room.id} />
-    <Button>Book now</Button>
     </div>
+    <Button>Book now</Button>
     </main>
       <Footer />
       </>

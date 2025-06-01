@@ -11,16 +11,17 @@ import { Button } from "../ui/button";
 interface Props {
     title: string,
     location: string,
-    url: string
+    url: string,
+    handle: string
 }
 
-const GridTile = ({title, location, url} : Props ) => { 
+const GridTile = ({title, location, url, handle} : Props ) => { 
     return (
         <div>
             <Card className="w-full max-w-xs transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                 <CardHeader>
                     <CardTitle className="inline-flex justify-between">
-                    <Link href='room'>{title}</Link>  <Button className="relative -top-2.5 "><Heart /></Button>
+                    <Link href={`/hotel/${handle}`}>{title}</Link>  <Button className="relative -top-2.5 "><Heart /></Button>
                     </CardTitle>
                     </CardHeader>
                     <CardContent className="relative w-full h-50">

@@ -57,6 +57,13 @@
       "when": 1747322107951,
       "tag": "0007_worried_meteorite",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1748778100007,
+      "tag": "0008_dashing_psynapse",
+      "breakpoints": true
     }
   ]
 }

@@ -1,5 +1,7 @@
 import { boolean } from 'drizzle-orm/gel-core';
 import { integer, numeric, pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core';
+import { url } from 'inspector';
+import { number } from 'zod';
 
 
 export const bookingTable = pgTable('bookings_table', {
@@ -62,6 +64,19 @@ export const hotelRoomPictureTable = pgTable('hotels_room_picture_table', {
   userId: text('user_id').unique().notNull(),
   hotelRoomId: integer('hotel_room_id').references(() => hotelRoomTable.id),
   url: text('url').notNull(),
+  isDeleted: boolean('isDeleted').notNull(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at')
+    .notNull()
+    .$onUpdate(() => new Date()),
+});
+
+export const blogTable = pgTable('blog_table', {
+  id: serial('id').primaryKey(),
+  userId: text('user_id').unique().notNull(),
+  title: text('title').notNull(),
+  url: text('url').notNull(),
+  description: text('description').notNull(),
   isDeleted: boolean('isDeleted').notNull(),
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at')
