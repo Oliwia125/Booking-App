@@ -36,6 +36,7 @@ function LazyGrid() {
           offset={offset}
         />
       )}
+      <div className="flex justify-center">
       <Button
         onClick={async () => {
           const result = await getHotels();
@@ -45,7 +46,7 @@ function LazyGrid() {
         }}
       >
         Load more
-      </Button>
+      </Button></div>
     </div>
   );
 }

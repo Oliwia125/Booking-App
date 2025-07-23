@@ -1,0 +1,1 @@
+ALTER TABLE "hotels_table" ADD COLUMN "price" text NOT NULL;

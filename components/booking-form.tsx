@@ -65,7 +65,7 @@ export function BookingForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="conatiner mx-auto flex items-center border-b-2 px-6 py-2 h-24">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="conatiner mx-auto flex items-center border-b-2 border-black px-6 py-2 h-24">
 
 
       <div className='grow'>
@@ -87,7 +87,7 @@ export function BookingForm() {
           )}
         /> </li>
 
-          <li className="grid w-full max-w-sm items-center gap-1.5">
+          <li className="grid w-full max-w-sm items-center gap-1.5 border-white">
         <FormField
           control={form.control}
           name="stayDate"

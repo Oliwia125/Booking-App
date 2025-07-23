@@ -4,6 +4,7 @@ import React from "react";
 import GridTile from "./grid-tile";
 import { useStore } from "@/store/useStore";
 
+
 interface Props {
     hotels: {title: string, location: string, url: string, handle: string}[]
     offset: number

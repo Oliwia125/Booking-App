@@ -39,7 +39,9 @@ const RoomPage = async function RoomPage({ params }: Props) {
       <div className="flex flex-row p-3">
     <GridPhotosTile hotelRoomId={room.id} />
     </div>
+    <div className="p-10">
     <Button>Book now</Button>
+    </div>
     </main>
       <Footer />
       </>

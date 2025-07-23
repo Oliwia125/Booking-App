@@ -1,0 +1,1 @@
+ALTER TABLE "hotels_room_table" ADD COLUMN "attractions" text;

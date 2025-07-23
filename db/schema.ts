@@ -47,6 +47,18 @@ export const hotelRoomTable = pgTable('hotels_room_table', {
     .$onUpdate(() => new Date()),
 });
 
+export const hotelRoomAttractionTable = pgTable('hotels_room_attraction_table', {
+  id: serial('id').primaryKey(),
+  userId: text('user_id').unique().notNull(),
+  hotelRoomId: integer('hotel_room_id').references(() => hotelRoomTable.id),
+  attraction: text('attraction').notNull(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at')
+    .notNull()
+    .$onUpdate(() => new Date()),
+});
+
+
 export const hotelPictureTable = pgTable('hotels_picture_table', {
   id: serial('id').primaryKey(),
   userId: text('user_id').unique().notNull(),

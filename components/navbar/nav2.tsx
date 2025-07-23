@@ -12,7 +12,7 @@ import { BookingForm } from '../booking-form';
 
 
 
-const Navbar = () => {
+const headerNavbar = () => {
   const setLocation = useStore((state)=> state.setLocation);
   
   const handleLocationChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,15 +21,14 @@ const Navbar = () => {
 
   return (
     <div className={
-    'conatiner mx-auto flex items-center border-b-2 px-6 py-2 h-24 bg-transparent'
+    'conatiner mx-auto flex items-center bg-transparent px-6 py-2 h-24  text-white'
     } 
     >
      
-     <h1 className='font-bold p-2'><Link href={'/'}>Book Me</Link></h1>
-    <BookingForm />
-
+        <BookingForm />
+       
     </div>
   )
 }
 
-export default Navbar 
+export default headerNavbar 
