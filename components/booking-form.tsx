@@ -28,6 +28,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { createBooking } from "./actions"
+import { useStore } from "@/store/useStore"
 
 const formSchema = z.object({
   where: z.string().min(2, {
@@ -42,6 +43,8 @@ const formSchema = z.object({
 })
 
 export function BookingForm() {
+    const setSearchParams = useStore((state) => state.setSearchParams)
+    
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -52,6 +55,12 @@ export function BookingForm() {
 
      async function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values)
+        
+        // Save location to global state
+        setSearchParams({
+            location: values.where
+        })
+        
         const data = {
             title: "test",
             userId: Math.random(),

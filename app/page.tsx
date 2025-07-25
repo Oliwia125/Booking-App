@@ -12,7 +12,6 @@ interface Hotel {
 }
 
 export default async function Home() {
-
   return (
     <main>
       
