@@ -28,6 +28,11 @@ const Navbar = () => {
      <h1 className='font-bold p-2'><Link href={'/'}>Book Me</Link></h1>
     <BookingForm />
 
+     <div className='hidden sm:block'>
+        <Button className='m-2'><Link href='admin'>Sign up</Link></Button>
+        <span> </span>
+        <Button className='m-2'><Link href='admin'>Log in</Link></Button>
+     </div>
     </div>
   )
 }

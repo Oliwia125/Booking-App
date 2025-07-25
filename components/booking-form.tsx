@@ -87,7 +87,7 @@ export function BookingForm() {
           )}
         /> </li>
 
-          <li className="grid w-full max-w-sm items-center gap-1.5 border-white">
+          <li className="grid w-full max-w-sm items-center gap-1.5">
         <FormField
           control={form.control}
           name="stayDate"
