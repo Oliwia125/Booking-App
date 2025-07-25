@@ -52,7 +52,7 @@ const GridPhotosTile = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTM
               <Image src={_.url} width={imageWidth} height={imageHeight} alt="Room picture" className="rounded-2xl p-2 justify-center" />
             </div>
             <span>
-        <h2 className="text-bold pt-3 text-2xl justify-end">400 EUR</h2>
+        <h2 className="text-bold pt-3 mb-5 text-2xl justify-end">400 EUR</h2>
       </span>
           </CarouselItem>
         )}
@@ -61,7 +61,7 @@ const GridPhotosTile = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTM
         <CarouselNext />
       </Carousel>
       <div className="mb-0.5">
-        <Card className="bg-transparent mb-5">
+        <Card className="bg-transparent mb-5 border-gray-500">
           <CardDescription className="mx-5 text-xl text-slate-100 font-bold">About this stay:</CardDescription>
       <CardDescription className="mx-5 text-xl text-slate-100">{roomInfo?.description}</CardDescription>
       </Card>
@@ -69,7 +69,7 @@ const GridPhotosTile = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTM
       
         
       <div className="mt-0.5">
-       <Card className="bg-transparent">
+       <Card className="bg-transparent border-gray-500">
        <CardTitle className="text-bold mx-2 text-lg">The benefits of this stay:</CardTitle>
         <CardContent className="text-md">
         <p className="flex py-3 "><Check /> King size bed</p>
