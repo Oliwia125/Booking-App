@@ -35,11 +35,11 @@ const RoomPage = async function RoomPage({ params }: Props) {
   return (
     <>
     <Navbar />
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="flex flex-row p-3">
+    <main className="min-h-screen flex flex-col items-center justify-center p-24">
+      <div className="w-full flex justify-center">
     <GridPhotosTile hotelRoomId={room.id} />
     </div>
-    <div className="p-10">
+    <div className="mt-10 position-relative w-80">
     <Button>Book now</Button>
     </div>
     </main>

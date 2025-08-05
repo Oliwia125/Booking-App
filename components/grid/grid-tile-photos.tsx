@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { eq } from "drizzle-orm";
 import { Heart, Check } from "lucide-react";
 import { Button } from "../ui/button";
+import { Autour_One } from "next/font/google";
 async function getHotelRoomPictures(id: number): Promise<any[]> {
   return await db.select().from(hotelRoomPictureTable).where(eq(hotelRoomPictureTable.hotelRoomId, id));
 }
@@ -44,7 +45,7 @@ const GridPhotosTile = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTM
       <div className="flex-col w-5xl">
         <CardTitle className="pb-5 text-4xl ">{roomInfo?.title}</CardTitle>
         <CardDescription className="p-3 text-lg">{roomLocation?.location}</CardDescription>
-      <Carousel className={cn("w-150", className)} {...props} ref={ref}>
+      <Carousel className={cn("w-200", className)} {...props} ref={ref}>
         <CarouselContent>
         {images.map((_, i) => 
           <CarouselItem  key={i} >
@@ -60,7 +61,7 @@ const GridPhotosTile = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTM
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <div className="mb-0.5">
+      <div className="mb-0.5 w-200">
         <Card className="bg-transparent mb-5 border-gray-500">
           <CardDescription className="mx-5 text-xl text-slate-100 font-bold">About this stay:</CardDescription>
       <CardDescription className="mx-5 text-xl text-slate-100">{roomInfo?.description}</CardDescription>
@@ -68,7 +69,7 @@ const GridPhotosTile = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTM
       </div>
       
         
-      <div className="mt-0.5">
+      <div className="mt-0.5 w-200">
        <Card className="bg-transparent border-gray-500">
        <CardTitle className="text-bold mx-2 text-lg">The benefits of this stay:</CardTitle>
         <CardContent className="text-md">

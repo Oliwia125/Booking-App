@@ -16,7 +16,7 @@ async function blog() {
         <div>
           <h1 className='font-bold text-white text-6xl m-8'>Travel with us</h1>
         </div>
-        <div className="grid grid-cols-3 gap-6 justify-center mx-30">
+        <div className="grid grid-cols-3 gap-6 justify-center mx-30 lg:grid-cols-4 xl:grid-cols-4">
             {blogs.map((blog) => (
               <BlogCard key={blog.id} title={blog.title} url={blog.url} description={blog.description} handle={blog.handle} />
             ))} 

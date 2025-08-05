@@ -1,11 +1,17 @@
 import { create } from 'zustand';
 
-interface StoreState {
+interface SearchParams {
     location: string;
-    setLocation: (location: string) => void;
+}
+
+interface StoreState {
+    searchParams: SearchParams;
+    setSearchParams: (params: SearchParams) => void;
 }
 
 export const useStore = create<StoreState>((set) => ({
-    location: '',
-    setLocation: (location) => set({ location }),
+    searchParams: {
+        location: ''
+    },
+    setSearchParams: (params) => set({ searchParams: params }),
 }));

@@ -26,11 +26,7 @@ const Footer = () => {
                     Contact us
                 </Link>
             </div>
-            <div className="px-5 py-2">
-                <Link href="/pricing" className="text-base leading-6 text-gray-500 hover:text-gray-200">
-                    Pricing
-                </Link>
-            </div>
+            
             <div className="px-5 py-2">
                 <Link href="/terms" className="text-base leading-6 text-gray-500 hover:text-gray-200">
                     Terms

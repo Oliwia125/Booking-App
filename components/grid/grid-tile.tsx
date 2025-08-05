@@ -18,13 +18,13 @@ interface Props {
 const GridTile = ({title, location, url, handle} : Props ) => { 
     return (
         <div>
-            <Card className="w-full max-w-xs transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+            <Card className="sm:w-full md:w-full lg: w-[400px] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                 <CardHeader>
                     <CardTitle className="inline-flex justify-between">
                     <Link href={`/hotel/${handle}`}>{title}</Link>  <Button className="relative -top-2.5 "><Heart /></Button>
                     </CardTitle>
                     </CardHeader>
-                    <CardContent className="relative w-full h-50">
+                    <CardContent className="relative w-full h-[200px] md:h-[300px]">
                             <Image className="rounded-sm drop-shadow-sm object-cover"
                             src={url}
                             layout="fill"
