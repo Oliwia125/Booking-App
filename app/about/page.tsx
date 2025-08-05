@@ -18,7 +18,7 @@ function contact() {
             <h2 className='text-black text-2xl font-serif'>
                 We are a team of travel enthusiasts who are passionate about helping you find the perfect stay.
             </h2>
-            <p className='text-black text-2xl font-serif'>
+            <p className='text- text-2xl font-serif'>
             We’re a Europe-wide booking platform that makes it easy to find and reserve your perfect stay—whether it’s a hotel in the city, a cozy cabin in the mountains, or anything in between. Wherever you're headed in Europe, we've got the keys to your next getaway.
             </p>
         </div>
