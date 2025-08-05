@@ -64,4 +64,8 @@ export const getHotelsBySearch = async (
     url: (hotel.hotels_picture_table?.url || '') as string,
     handle: hotel.hotels_table.handle as string,
   }));
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> refs/remotes/origin/main
